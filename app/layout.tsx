@@ -11,9 +11,9 @@ import QueryProvider from "@/components/providers/query-provider";
 const font = Open_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Koochi",
+  title: "Bonfire",
   description:
-    "Koochi is a Discord clone built with modern web technologies. It provides a platform for users to communicate in real-time through text channels, voice channels, and direct messages.",
+    "Bonfire is a Discord clone built with modern web technologies. It provides a platform for users to communicate in real-time through text channels, voice channels, and direct messages.",
 };
 
 export default function RootLayout({
