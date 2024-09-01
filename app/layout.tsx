@@ -25,7 +25,10 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <head>
-          <link rel="shortcut icon" type="image/png" href="/app/favicon.ico" />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" href="/favicon.png" sizes="16x16" />
+        <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
+        <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
         </head>
         <body className={cn(font.className, "bg-white dark:bg-[#313338]")}>
           <ThemeProvider
