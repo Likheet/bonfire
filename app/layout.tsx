@@ -24,6 +24,9 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
+        <head>
+          <link rel="shortcut icon" type="image/png" href="/public/bonfire-image.png" />
+        </head>
         <body className={cn(font.className, "bg-white dark:bg-[#313338]")}>
           <ThemeProvider
             attribute="class"
