@@ -21,7 +21,7 @@ Bonfire is a full-featured Discord clone built with modern web technologies. It 
 - **Backend**: Node.js, Prisma, MySQL (PlanetScale)
 - **Real-Time Communication**: Socket.io
 - **Authentication**: Clerk for user authentication and management
-- **Deployment**: Vercel (for frontend) and PlanetScale (for database)
+- **Deployment**: Railway.app for free deployment of dynamic pages( supports websockets )
 
 ## Setup Instructions
 
