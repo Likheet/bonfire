@@ -54,7 +54,6 @@
 		"eslint": "8.48.0",
 		"eslint-config-next": "13.4.12",
 		"immer": "^10.0.2",
-		"ioredis": "^5.3.2",
 		"livekit-client": "^1.13.4",
 		"livekit-server-sdk": "^1.2.6",
 		"lucide-react": "^0.274.0",

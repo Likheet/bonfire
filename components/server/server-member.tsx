@@ -1,19 +1,18 @@
 "use client";
 
-import { ShieldAlert, ShieldCheck } from "lucide-react";
+import { BadgeCheck, ShieldCheck } from "lucide-react";
 import { useParams, useRouter } from "next/navigation";
 
 import UserAvatar from "@/components/user-avatar";
-import { useOnlineStatus } from "@/hooks/use-online-status";
 import { cn } from "@/utils/cn";
 import { Member, MemberRole, Profile, Server } from "@prisma/client";
 
 const roleIcons = {
-	[MemberRole.GUEST]: null,
-	[MemberRole.ADMIN]: <ShieldAlert className="h-4 w-4 mr-2 text-rose-500" />,
-	[MemberRole.MODERATOR]: (
-		<ShieldCheck className="h-4 w-4 mr-2 text-indigo-500" />
-	),
+    [MemberRole.GUEST]: null,
+    [MemberRole.ADMIN]: <BadgeCheck className="h-4 w-4 mr-2 text-green-500" />,
+    [MemberRole.MODERATOR]: (
+        <ShieldCheck className="h-4 w-4 mr-2 text-indigo-500" />
+    ),
 };
 
 interface ServerMemberProps {
@@ -31,7 +30,6 @@ const ServerMember = ({ member, server }: ServerMemberProps) => {
 		router.push(`/servers/${server.id}/conversations/${member.id}`);
 	};
 
-	const { isUserOnline } = useOnlineStatus(member.profile);
 
 	return (
 		<button
@@ -43,7 +41,6 @@ const ServerMember = ({ member, server }: ServerMemberProps) => {
 		>
 			<UserAvatar
 				src={member.profile.imageUrl}
-				isOnline={isUserOnline}
 				className="h-8 w-8 md:h-8 md:w-8"
 			/>
 

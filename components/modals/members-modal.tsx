@@ -1,6 +1,7 @@
 "use client";
 
 import {
+	BadgeCheck,
 	Check,
 	Gavel,
 	Loader2,
@@ -43,7 +44,7 @@ import UserAvatarWrapper from "../user-avatar-wrapper";
 const roleIcons = {
 	GUEST: null,
 	MODERATOR: <ShieldCheck className="w-4 h-4 ml-2 text-indigo-500" />,
-	ADMIN: <ShieldAlert className="w-4 h-4 ml-2 text-rose-500" />,
+	ADMIN: <BadgeCheck className="w-4 h-4 ml-2 text-green-500" />,
 };
 
 const MembersModal = () => {

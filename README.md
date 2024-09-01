@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Bonfire! A Full-Stack Discord Clone
+## Overview
 
-## Getting Started
+Bonfire is a full-featured Discord clone built with modern web technologies. It allows users to create servers, communicate via text, audio, and video channels, and manage user permissions with roles such as admin, moderator, and guest. The app also supports real-time messaging, file sharing, and video calls, making it a robust platform for online communities.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Server Management**: Users can create and manage their own servers, invite others to join, and organize communication through different channels.
+- **Real-Time Communication**: Supports real-time messaging using WebSockets, allowing users to chat instantly in text channels.
+- **Message Management**: Users can edit and delete their messages, and admins or moderators can manage all messages within their servers.
+- **File Sharing**: Users can upload and share files such as PDFs and images within channels.
+- **Video and Audio Channels**: Users can create and join video and audio channels for live communication. The app supports video calls, screen sharing, and text chatting within video channels.
+- **User Roles and Permissions**: Admins can assign roles to users (e.g., moderator) and manage their permissions, such as the ability to delete messages or create channels.
+- **Infinite Scroll with React Query**: Messages load in batches as you scroll, improving performance and user experience.
+- **Dark and Light Mode**: The app includes a fully functional dark mode and light mode, providing a seamless user experience.
+- **Error Handling and Fallbacks**: If the WebSocket server fails, the app falls back to polling, ensuring that users can continue to communicate without interruptions.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technologies Used
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Frontend**: Next.js 13, React, Tailwind CSS, Chat UI
+- **Backend**: Node.js, Prisma, MySQL (PlanetScale)
+- **Real-Time Communication**: Socket.io
+- **Authentication**: Clerk for user authentication and management
+- **Deployment**: Vercel (for frontend) and PlanetScale (for database)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Setup Instructions
 
-## Learn More
+### Prerequisites
 
-To learn more about Next.js, take a look at the following resources:
+- Node.js (v14 or later)
+- MySQL (or PlanetScale for cloud database)
+- A Clerk account for authentication
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Installation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. **Clone the repository**:
 
-## Deploy on Vercel
+    ```bash
+    git clone https://github.com/Likheet/bonfire.git
+    cd bonfire
+    ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. **Install dependencies**:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+    ```bash
+    npm install
+    ```
+
+3. **Set up environment variables**:
+    - Create a `.env` file in the root directory.
+    - Add the following variables:
+
+    ```makefile
+    NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+    CLERK_SECRET_KEY=
+    DATABASE_URL=
+    UPLOADTHING_SECRET=
+    UPLOADTHING_APP_ID=
+    LIVEKIT_API_KEY=
+    LIVEKIT_API_SECRET=
+    NEXT_PUBLIC_LIVEKIT_URL=
+    ```
+
+4. **Initialize the database**:
+
+    ```bash
+    npx prisma migrate dev --name init
+    ```
+
+5. **Run the development server**:
+
+    ```bash
+    npm run dev
+    ```
+
+6. **Access the application**: Open your browser and navigate to http://localhost:3000.
+
+## Project Structure
+
+- **/app**: Contains the Next.js application routes and pages.
+- **/components**: Reusable React components for the UI.
+- **/lib**: Utility functions and configurations, including database setup with Prisma.
+- **/pages**: Next.js page routes for server-side rendering.
+- **/prisma**: Prisma schema file and migration history.
+- **/styles**: Global styles using Tailwind CSS.
+
+## Key Scripts
+
+- **npm run dev**: Starts the development server.
+- **npm run build**: Builds the application for production.
+- **npm run start**: Starts the production server.
+- **npx prisma studio**: Opens Prisma Studio for database management.
+
+## Contributing
+
+Contributions are welcome! Please fork the repository and use a feature branch. Pull requests are reviewed actively.

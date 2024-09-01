@@ -1,7 +1,7 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Edit, FileIcon, ShieldAlert, ShieldCheck, Trash } from "lucide-react";
+import { Edit, FileIcon, BadgeCheck, ShieldCheck, Trash } from "lucide-react";
 import Image from "next/image";
 import qs from "query-string";
 import { useEffect, useState } from "react";
@@ -38,7 +38,7 @@ interface ChatItemProps {
 const roleIcons = {
 	GUEST: null,
 	MODERATOR: <ShieldCheck className="h-4 w-4 text-indigo-500" />,
-	ADMIN: <ShieldAlert className="h-4 w-4 text-rose-500" />,
+	ADMIN: <BadgeCheck className="h-4 w-4 text-green-500" />,
 };
 
 const formSchema = z.object({

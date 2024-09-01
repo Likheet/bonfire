@@ -7,7 +7,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
 import { currentProfile } from "@/helpers/current-profile";
 import { ChannelType, MemberRole } from "@prisma/client";
-import { Hash, Mic, ShieldAlert, ShieldCheck, Video } from "lucide-react";
+import { BadgeCheck, Hash, Mic, ShieldAlert, ShieldCheck, Video } from "lucide-react";
 import ServerChannel from "./server-channel";
 import ServerMember from "./server-member";
 import ServerSection from "./server-section";
@@ -24,7 +24,7 @@ const icons = {
 
 const roleIcons = {
 	[MemberRole.GUEST]: null,
-	[MemberRole.ADMIN]: <ShieldAlert className="h-4 w-4 mr-2 text-rose-500" />,
+	[MemberRole.ADMIN]: <BadgeCheck className="h-4 w-4 mr-2 text-green-500" />,
 	[MemberRole.MODERATOR]: (
 		<ShieldCheck className="h-4 w-4 mr-2 text-indigo-500" />
 	),

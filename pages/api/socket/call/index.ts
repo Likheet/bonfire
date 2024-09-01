@@ -1,6 +1,5 @@
 import { currentProfilePages } from "@/helpers/current-profile-pages";
 import { db } from "@/lib/db";
-// import { publisher } from "@/lib/redis";
 import { NextApiResponseServerIo } from "@/types/server";
 import { Call } from "@prisma/client";
 import { NextApiRequest } from "next";
@@ -180,9 +179,9 @@ export default async function handler(
 				};
 				// publisher.publish(MISSED_CALL_KEY, JSON.stringify(payload));
 
-				// res?.socket?.server?.io?.emit(missedCallKey, {
-				// 	conversationId: call?.conversationId,
-				// });
+				res?.socket?.server?.io?.emit(missedCallKey, {
+					conversationId: call?.conversationId,
+				});
 
 				await db.call.update({
 					where: {
